@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "prod": "NODE_ENV=production next start -p 4030",
+    "now-build": "next build && next export -o dist"
+  },
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "next": "^8.1.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.12.0",
+    "react-no-ssr": "^1.1.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "file-loader": "^4.2.0",
+    "url-loader": "^2.2.0"
+  }
+}
