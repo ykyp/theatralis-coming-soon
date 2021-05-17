@@ -1,40 +1,33 @@
-import '../src/global.js';
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-    static async getInitialProps(ctx) {
-            const sheet = new ServerStyleSheet();
-            const page = ctx.renderPage(App => props => sheet.collectStyles( < App {...props }
-                    />));
-                    const styleTags = sheet.getStyleElement();
-                    const initialProps = await Document.getInitialProps(ctx);
-                    return {...initialProps, ...page, styleTags };
-                }
-                render() {
-                    return ( <
-                        html >
-                        <
-                        head >
-                        <
-                        link rel = "shortcut icon"
-                        href = "../static/images/favicon.png"
-                        type = "image/x-icon" / >
-                        <
-                        title > Coming Soon < /title> { this.props.styleTags } < /
-                        head > <
-                        Head / >
-                        <
-                        body style = {
-                            { margin: 0 }
-                        } >
-                        <
-                        Main / >
-                        <
-                        NextScript / >
-                        <
-                        /body> < /
-                        html >
-                    )
-                }
-            }
+   render() {
+      return (
+         <Html>
+         <Head>
+            {/* Global Site Tag (gtag.js) - Google Analytics */}
+            <script
+               async
+               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+            />
+            <script
+               dangerouslySetInnerHTML={{
+                  __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+               }}
+            />
+         </Head>
+         <body>
+         <Main />
+         <NextScript />
+         </body>
+         </Html>
+      )
+   }
+}

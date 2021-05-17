@@ -1,8 +1,0 @@
-{
-    "version": 2,
-    "name": "coming-soon-nextjs",
-    
-    "builds": [
-        { "src": "package.json", "use": "@now/static-build" }
-    ]
-}
