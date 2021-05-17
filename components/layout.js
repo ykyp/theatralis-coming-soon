@@ -29,9 +29,8 @@ export default function Layout({ children, home }) {
             <Image
               priority
               src="/images/theatralis.png"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              width={150}
+              height={150}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -43,9 +42,8 @@ export default function Layout({ children, home }) {
                 <Image
                   priority
                   src="/images/theatralis.png"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
+                  width={150}
+                  height={150}
                   alt={name}
                 />
               </a>
@@ -59,13 +57,6 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
     </div>
   )
 }
