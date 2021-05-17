@@ -30,7 +30,7 @@ export default function Layout({ children, home }) {
               priority
               src="/images/theatralis.png"
               width={150}
-              height={150}
+              height={75}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -43,7 +43,7 @@ export default function Layout({ children, home }) {
                   priority
                   src="/images/theatralis.png"
                   width={150}
-                  height={150}
+                  height={75}
                   alt={name}
                 />
               </a>
